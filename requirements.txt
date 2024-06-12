@@ -1,0 +1,13 @@
+llama-index
+pypdf
+google.generativeai
+llama-index-llms-gemini
+langchain
+langchain-google-genai
+python-dotenv
+langchain-community
+cassio
+streamlit
+
+numpy
+faiss-cpu
