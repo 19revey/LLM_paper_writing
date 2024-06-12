@@ -17,7 +17,7 @@ submit = st.button("Generate results")
 
 
 
-llm = llm()
+llm = llm(model="gemini-1.5-pro",temperature=0.5)
 reply = llm.get_llm_response()
 
 

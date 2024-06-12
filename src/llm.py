@@ -13,16 +13,14 @@ from langchain_core.output_parsers import StrOutputParser
 
 
 class llm:
-    def __init__(self, model=None):
+    def __init__(self, model=None,temperature=0.0):
         if not model:
             model = "gemini-pro"
-            load_dotenv()
-            GOOGLE_API_KEY= os.getenv("GOOGLE_API_KEY")
-            self.llm = GoogleGenerativeAI(model=model, temperature=0.0,api_key=GOOGLE_API_KEY)
-            self.embedding = GoogleGenerativeAIEmbeddings(model = "models/embedding-001",api_key=GOOGLE_API_KEY)
-
-        else:
-            raise TypeError("Model not found")  
+        
+        load_dotenv()
+        GOOGLE_API_KEY= os.getenv("GOOGLE_API_KEY")
+        self.llm = GoogleGenerativeAI(model=model, temperature=temperature,api_key=GOOGLE_API_KEY)
+        self.embedding = GoogleGenerativeAIEmbeddings(model = "models/embedding-001",api_key=GOOGLE_API_KEY)
         
         self.prompt_template = """
             You are a researcher know how to write scientific paper on topics related to STEM. 
