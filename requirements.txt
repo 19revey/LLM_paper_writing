@@ -2,7 +2,7 @@ llama-index
 pypdf
 google.generativeai
 llama-index-llms-gemini
-langchain
+# langchain
 langchain-google-genai
 python-dotenv
 langchain-community

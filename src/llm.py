@@ -49,12 +49,8 @@ class llm:
 
         # retriever = new_db.similarity_search(query_text, k=5)
         retriever = new_db.as_retriever()
-
-
         # Define the output parser
         output_parser = StrOutputParser()
-
-
         chain = (
                 {"context": retriever, "question": RunnablePassthrough()}
                 | prompt
