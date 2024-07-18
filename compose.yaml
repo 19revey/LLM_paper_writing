@@ -7,3 +7,5 @@ services:
       - .:/app
     environment:
       - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - ASTRA_DB_ID=${ASTRA_DB_ID}
+      - ASTRA_DB_APPLICATION_TOKEN=${ASTRA_DB_APPLICATION_TOKEN}

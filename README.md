@@ -17,10 +17,16 @@ This AI model is designed to assist in generating  scholarly content for academi
 ## Features
 - **Paragraph Generation**: Automatically generates text for academic papers based on given prompts.
 - **Customization**: Ability to fine-tune the model on specific topics or styles.
-
+- **Free to use**: Powered by the latest Gemini 1.5 pro. 
 
 <img src="https://i0.wp.com/gradientflow.com/wp-content/uploads/2023/10/newsletter87-RAG-simple.png?w=1464&ssl=1" alt="Description of Image" width="500" height="300">
 
 
-<!-- ## Getting Started
-To get started with using the generative AI model, follow these steps: -->
+## Getting Started
+
+- The app is hosted on streamlit cloud: [https://llmpaperwriting.streamlit.app/](https://llmpaperwriting.streamlit.app/)
+
+- To run it locally, clone this repository and start the container:
+```bash
+docker compose up
+```
