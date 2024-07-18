@@ -12,7 +12,17 @@ This AI model is designed to assist in generating scholarly content for academic
 
 **Warning:** References might not be included in the response. Ensure all content is properly cited for publication purposes.
 
-<img src="demo.png" alt="Description of Image" width="500" height="400">
+<div style="display: flex;">
+  <figure style="margin-right: 10px;">
+    <img src="img/demo.png" alt="Description of Image" width="350" height="300">
+    <figcaption style="text-align: center;">Brief, question-style prompt for Q&A</figcaption>
+  </figure>
+  
+  <figure style="margin-left: 10px;">
+    <img src="img/demo1.png" alt="Description of Image" width="350" height="300">
+    <figcaption style="text-align: center;">Long paragraph prompt to rephrase</figcaption>
+  </figure>
+</div>
 
 
 
