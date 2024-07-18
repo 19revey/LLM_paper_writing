@@ -26,7 +26,13 @@ This AI model is designed to assist in generating  scholarly content for academi
 
 - The app is hosted on streamlit cloud: [https://llmpaperwriting.streamlit.app/](https://llmpaperwriting.streamlit.app/)
 
-- To run it locally, clone this repository and start the container:
+- To run it locally, start by configuring the necessary environmental variables:
 ```bash
-docker compose up
+  - GOOGLE_API_KEY
+  - ASTRA_DB_ID
+  - ASTRA_DB_APPLICATION_TOKEN=
+```
+- Next, clone this repository and launch the container:
+```bash
+    docker compose up
 ```
