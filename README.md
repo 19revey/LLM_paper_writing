@@ -14,12 +14,12 @@ This AI model is designed to assist in generating scholarly content for academic
 
 <div style="display: flex;">
   <figure style="margin-right: 10px;">
-    <img src="img/demo.png" alt="Description of Image" width="350" height="300">
+    <img src="img/demo.png" alt="Description of Image" width="320" height="270">
     <figcaption style="text-align: center;">Brief, question-style prompt for Q&A</figcaption>
   </figure>
   
   <figure style="margin-left: 10px;">
-    <img src="img/demo1.png" alt="Description of Image" width="350" height="300">
+    <img src="img/demo1.png" alt="Description of Image" width="320" height="270">
     <figcaption style="text-align: center;">Long paragraph prompt to rephrase</figcaption>
   </figure>
 </div>
