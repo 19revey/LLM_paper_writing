@@ -21,11 +21,6 @@ class llm:
             model = "gemini-pro"
         
         load_dotenv()
-        # ASTRA_DB_ID=os.getenv("ASTRA_DB_ID")
-        # ASTRA_DB_APPLICATION_TOKEN=os.getenv("ASTRA_DB_APPLICATION_TOKEN")
-
-        # ASTRA_DB_APPLICATION_TOKEN = "AstraCS:ZjAlBBhppaDpnwwytTluLfWu:b9c64128087ecbce6fd41221da84f2f966640fe2621d7b0824435bc31a1fe454"
-        # ASTRA_DB_ID="73a41af9-ca46-4f34-b58c-49442121ba07"
 
         GOOGLE_API_KEY= os.getenv("GOOGLE_API_KEY")
         self.llm = GoogleGenerativeAI(model=model, temperature=temperature,api_key=GOOGLE_API_KEY)
@@ -47,7 +42,7 @@ class llm:
 
             2. If the past texts contain no information related to {context}, then try to mimic the style of the documents to rewrite the paragraph.
 
-            Please rewrite the paragraph without numbered citations or references:
+            Please rewrite the paragraph. If there are any citations or references, include them in the format of (author, year) at the end of the paragraph.
         """
         
     def get_llm_response(self,vecstore=None):
@@ -55,7 +50,7 @@ class llm:
 
         if vecstore is None:
             local_db = FAISS.load_local("segregation_base", self.embedding, allow_dangerous_deserialization=True)
-            retriever = local_db.as_retriever(search_kwargs={'lambda_mult': 0.5, 'fetch_k': 20})
+            retriever = local_db.as_retriever(search_kwargs={'lambda_mult': 0.5, 'fetch_k': 50})
         else:
             retriever = vecstore.as_retriever()
 

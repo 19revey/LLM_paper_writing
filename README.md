@@ -8,16 +8,17 @@
 <!-- [![PyPI Downloads](https://img.shields.io/pypi/dm/zlm.svg?label=PyPI%20downloads&color=blueviolet&target=blank)](https://pypi.org/project/zlm/) -->
 
 
-This AI model is designed to assist in generating  scholarly content for academic papers in the field of granular segregation.
+This AI model is designed to assist in generating scholarly content for academic papers in the area of granular segregation. It embeds queries to retrieve highly similar text chunks from relevant papers, using these documents to craft responses.
 
-<!-- ![Description of Image](https://i0.wp.com/gradientflow.com/wp-content/uploads/2023/10/newsletter87-RAG-simple.png?w=1464&ssl=1) -->
+<img src="demo.png" alt="Description of Image" width="500" height="400">
 
 
 
 ## Features
 - **Paragraph Generation**: Automatically generates text for academic papers based on given prompts.
 - **Customization**: Ability to fine-tune the model on specific topics or styles.
-- **Free to use**: Powered by the latest Gemini 1.5 pro. 
+- **Free to use**: Powered by the latest Gemini 1.5 pro. While there is a limit on request frequency, it is currently free.
+- **Secure**: The code is open source, and uploaded PDF files are stored on Astra DB for persistence.
 
 <img src="https://i0.wp.com/gradientflow.com/wp-content/uploads/2023/10/newsletter87-RAG-simple.png?w=1464&ssl=1" alt="Description of Image" width="500" height="300">
 
