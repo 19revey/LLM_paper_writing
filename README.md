@@ -24,6 +24,7 @@ This AI model is designed to assist in generating scholarly content for academic
 
 <img src="https://i0.wp.com/gradientflow.com/wp-content/uploads/2023/10/newsletter87-RAG-simple.png?w=1464&ssl=1" alt="Description of Image" width="500" height="300">
 
+*Source: [Gradient Flow](https://gradientflow.com/best-practices-in-retrieval-augmented-generation/).*
 
 ## Getting Started
 
