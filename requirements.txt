@@ -11,3 +11,5 @@ streamlit
 
 numpy
 faiss-cpu
+
+transformers

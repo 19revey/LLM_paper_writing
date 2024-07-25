@@ -5,7 +5,7 @@
 
 
 
-This AI model is designed to assist in generating scholarly content for academic papers in the area of granular segregation. It embeds queries to retrieve highly similar text chunks from relevant papers, using these documents to craft responses.
+This AI model is designed to assist in generating scholarly content for academic papers in selected areas. It embeds queries to retrieve highly similar text chunks from relevant papers, using these documents to craft responses.
 
 **Warning:** References might not be included in the response. Ensure all content is properly cited for publication purposes.
 

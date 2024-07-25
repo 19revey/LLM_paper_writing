@@ -51,6 +51,9 @@ class llm:
         if vecstore is None:
             local_db = FAISS.load_local("segregation_base", self.embedding, allow_dangerous_deserialization=True)
             retriever = local_db.as_retriever(search_kwargs={'lambda_mult': 0.5, 'fetch_k': 50})
+        elif isinstance(vecstore,str):
+            local_db = FAISS.load_local(vecstore, self.embedding, allow_dangerous_deserialization=True)
+            retriever = local_db.as_retriever(search_kwargs={'lambda_mult': 0.5, 'fetch_k': 50})
         else:
             retriever = vecstore.as_retriever()
 

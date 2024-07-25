@@ -14,11 +14,13 @@ st.text("Rephrase your draft or answer technical questions in the field of granu
 llm = llm(temperature=0.5)
 
 # VectorStore selection
-VectorStore = ["Granular Segregation"]  # You can dynamically load folder names if needed
+VectorStore = ["Granular Segregation","Membrane"]  # You can dynamically load folder names if needed
 selected_VectorStore = st.selectbox("Select a Topic", VectorStore)
 
 if selected_VectorStore == "Granular Segregation":
     reply=segregation(llm)
+elif selected_VectorStore == "Membrane":
+    reply=llm.get_llm_response(vecstore="membrane")
 
 # Generate content
 context=st.text_area("Paste the text here",help="Please paste the text here")

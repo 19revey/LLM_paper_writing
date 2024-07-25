@@ -17,10 +17,10 @@ warnings.filterwarnings("ignore")
 
 
 class readpdf:
-    def __init__(self, embedding=None, chuck_size=2000, chuck_overlap=500) :
+    def __init__(self, embedding=None, chuck_size=2000, chuck_overlap=500,path="pdfs") :
         # pdfs="*pdf"
         # combined_path=os.path.join(path,pdfs)
-        self.pdf_docs=glob.glob("pdfs/*.pdf")
+        self.pdf_docs=glob.glob(f"{path}/*.pdf")
         self.text = ""
         self.chuck_size = chuck_size
         self.chuck_overlap = chuck_overlap
@@ -70,10 +70,10 @@ class readpdf:
         return chunks
     
 
-    def create_vectorstore(self):
+    def create_vectorstore(self,name="faiss_index"):
         chunks=self.get_text_chunks()
         vectorstore = FAISS.from_texts(texts=chunks, embedding=self.embedding)
-        vectorstore.save_local("faiss_index")
+        vectorstore.save_local(name)
         logging.info("Vectorstore created")
 
     
@@ -100,14 +100,11 @@ class readpdf:
 
 
 if __name__ == "__main__":
-    path = glob.glob("new_pdfs/*.pdf")
-    path = ["pdfs/2018PRF.pdf"]
-    print(path)
-    obj=readpdf()
-    print("Object created")
-    # obj.get_text_chunks(path)
-    obj.update_vectorstore(old_vec="segregation_base",new_vec="segregation_custimized",pdfs=path)
-    # obj.create_vectorstore()
-    # obj.update_vectorstore(pdfs=path)
+
+    obj=readpdf(path="ml_papers")
+
+    # obj.update_vectorstore(old_vec="segregation_base",new_vec="segregation_custimized",pdfs=path)
+    obj.create_vectorstore(name="membrane")
+
   
 
