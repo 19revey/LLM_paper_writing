@@ -11,6 +11,8 @@ from src.utils.exception import CustomException
 import sys
 import hashlib
 
+import argparse
+
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -18,8 +20,8 @@ warnings.filterwarnings("ignore")
 
 class readpdf:
     def __init__(self, embedding=None, chuck_size=2000, chuck_overlap=500,path="pdfs") :
-        # pdfs="*pdf"
-        # combined_path=os.path.join(path,pdfs)
+
+
         self.pdf_docs=glob.glob(f"{path}/*.pdf")
         self.text = ""
         self.chuck_size = chuck_size
@@ -70,8 +72,9 @@ class readpdf:
         return chunks
     
 
-    def create_vectorstore(self,name="faiss_index"):
-        chunks=self.get_text_chunks()
+    def create_vectorstore(self,name="faiss_index",pdfs=None):
+        
+        chunks=self.get_text_chunks(pdfs)
         vectorstore = FAISS.from_texts(texts=chunks, embedding=self.embedding)
         vectorstore.save_local(name)
         logging.info("Vectorstore created")
@@ -101,10 +104,28 @@ class readpdf:
 
 if __name__ == "__main__":
 
-    obj=readpdf(path="ml_papers")
 
-    # obj.update_vectorstore(old_vec="segregation_base",new_vec="segregation_custimized",pdfs=path)
-    obj.create_vectorstore(name="membrane")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--path", type=str, required=True,help="path to pdf files")
+    parser.add_argument("--name", type=str, required=True,help="vector store name")
+    args = parser.parse_args()
+    file_path=glob.glob(f"{args.path}/*.pdf") 
+    
+    vec_name=args.name
+
+    try:
+        obj=readpdf(path=file_path)
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+    if os.path.exists(vec_name):
+        print("update vec store")
+        obj.update_vectorstore(old_vec="vec_name",new_vec="vec_name",pdfs=file_path)
+    else:
+        print("create new vec store")
+        obj.create_vectorstore(name=vec_name,pdfs=file_path)
+
+
 
   
 
