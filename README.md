@@ -52,3 +52,4 @@ This AI model is designed to assist in generating scholarly content for academic
 ## Next
 - Removing near duplicates in semantic search retrieval using hashing techniques
 - Web scraping online publications
+- Multimodal rag
