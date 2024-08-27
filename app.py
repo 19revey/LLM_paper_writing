@@ -19,7 +19,7 @@ selected_VectorStore = st.selectbox("Select a Topic", VectorStore)
 
 if selected_VectorStore == "Granular Segregation":
     reply=segregation(llm)
-elif selected_VectorStore == "Membrane":
+elif selected_VectorStore == "Membrane Science":
     reply=llm.get_llm_response(vecstore="membrane")
 elif selected_VectorStore == "Cyper Security":
     reply=llm.get_llm_response(vecstore="cyber_security")
