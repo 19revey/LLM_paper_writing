@@ -7,7 +7,7 @@ from src.granularsegregation import segregation
 
 st.title("Enhance your scientific writing with domain-specific LLM")
 # st.text("- powered by Gemini pro, last updated on 2024-06-11")
-st.text("- Made by Yifei, last updated on 2024-07-17")
+st.text("last updated on 2024-07-17")
 st.text("Rephrase your draft or answer technical questions in the field of choice. \n Support for other fields will be available later.")
 
 # llm = llm(model="gemini-1.5-pro",temperature=0.5)
